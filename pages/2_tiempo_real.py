@@ -55,7 +55,7 @@ col_gauge, col_info = st.columns([2, 1])
 with col_gauge:
     steps = []
     boundaries = [0, 800, 1500, 3000, 5000, 7500, 10000]
-    step_colors = ["#22c55e20","#3b82f620","#eab30820","#f9731620","#ef444420","#a855f720"]
+    step_colors = ["#22c55e20","#3b82f620","#eab30820","#f9731620","#ef434420","#a855f720"]
     for i in range(len(boundaries)-1):
         steps.append({"range": [boundaries[i], min(boundaries[i+1], 10000)], "color": step_colors[i]})
 
