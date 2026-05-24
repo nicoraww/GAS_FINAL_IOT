@@ -121,7 +121,7 @@ def calc_metricas(df):
     auc = 0
     if len(df) > 1:
         t = df["timestamp"].astype(np.int64) / 1e9
-        auc = abs(float(np.trapz(s.values, t))) / 60
+        auc = abs(float(np.trapezoid(s.values, t))) / 60
 
     return {
         "dias_activos":      dias_activos,
