@@ -50,12 +50,6 @@ if nivel_i >= 4:
 st.markdown('<div style="font-family:Space Mono,monospace;font-size:0.7rem;color:#475569;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">● Lecturas en tiempo real</div>', unsafe_allow_html=True)
 
 def make_gauge(value, title, max_val, color, suffix=""):
-    steps = []
-    boundaries = [0, 800, 1500, 3000, 5000, 7500, 10000]
-    colors_step = ["#22c55e18","#3b82f618","#eab30818","#f9731618","#ef444418","#a855f718"]
-    for i in range(len(boundaries)-1):
-        steps.append({"range": [boundaries[i], boundaries[i+1]], "color": colors_step[i]})
-
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
         value=value,
@@ -67,7 +61,6 @@ def make_gauge(value, title, max_val, color, suffix=""):
             "bar":  {"color": color, "thickness": 0.25},
             "bgcolor": "#0f0f1e",
             "bordercolor": "#1e1e35", "borderwidth": 1,
-            "steps": steps,
             "threshold": {"line": {"color": color, "width": 3}, "thickness": 0.8, "value": value}
         }
     ))
